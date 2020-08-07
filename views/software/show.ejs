@@ -1,0 +1,36 @@
+<%- include('../partials/header') %>
+
+<div class="jumbotron">
+    <div class="container">
+        <h1><%= company.name %></h1>
+        <a class="btn btn-primary" href="/software/<%= company._id %>/posts/new">Add Your Interview Experience</a>
+    </div>    
+</div>
+
+<div class="container">
+    <% company.posts.forEach(function(post){ %>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="img-thumbnail">
+                    <h4><%= post.text %></h4>
+                    <p><strong><em>Contributed by <%= post.author.username %></em></strong></p>
+
+                    <% if(currentUser && post.author.id.equals(currentUser._id)){ %>
+                        <a class="btn btn-xs btn-warning" href="/software/<%=company._id%>/posts/<%=post._id%>/edit">Edit</a>
+                        <form style="display: inline;" action="/software/<%=company._id%>/posts/<%=post._id%>?_method=DELETE " method="POST">
+                            <input type="submit" class="btn btn-danger btn-xs" value="Delete">
+                        </form>
+                    <% } %>
+                </div>
+                <br>
+                <br>
+
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        
+    <% }); %>
+</div>
+
+<%- include('../partials/footer') %>

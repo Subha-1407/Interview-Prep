@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+<div class="container">
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Software Companies Interview Experience</h1>
+            <a class="btn btn-primary" href="/software/new">Add a new Company</a>
+        </div>
+    </div>
+
+<div class="row text-center" style="display:flex; flex-wrap:wrap;">
+    <% data.forEach(function(company){ %>
+        <div class="col-md-3 col-sm-6" >
+            <div class="img-thumbnail">
+                
+                <img src="<%= company.image %>">
+                <a class="btn btn-primary" href="/software/<%= company._id %>">Interview Experiences</a>
+            </div>
+        </div>
+    <% }); %>
+</div>
+</div>
+<%- include('../partials/footer') %>

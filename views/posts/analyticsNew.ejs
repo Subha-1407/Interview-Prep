@@ -1,0 +1,31 @@
+<%- include('../partials/header'); %>
+
+
+
+<div class="container">
+    <h1 style="text-align: center;">Add your experince for <%= company.name %></h1>
+
+    <div style="width: 30%;margin: 0 auto ;">
+        <form action="/analytics/<%= company.id %>/posts" method="POST">        
+            <div class="form-group">
+                <textarea class="form-control" name="post[text]" id="" placeholder="Write your experince and also mention the year and type of placement(off-campus or on-campus) cols="30" rows="15"></textarea>                                
+            </div>
+            
+
+            <div class="form-group">
+                <button>Submit</button>
+            </div>
+        
+        
+        </form>
+    
+        <p style="margin: 0 auto;">
+            <a class="btn btn-primary" href="/analytics/<%= company.id %>">Back</a>
+        </p>
+    </div>
+</div>
+
+
+
+
+<%- include('../partials/footer'); %>
