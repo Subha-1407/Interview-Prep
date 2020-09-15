@@ -1,19 +1,23 @@
 <%- include('../partials/header') %>
 
-<div class="jumbotron">
-    <div class="container">
-        <h1><%= company.name %></h1>
-        <a class="btn btn-primary" href="/analytics/<%= company._id %>/posts/new">Add Your Interview Experience</a>
-    </div>    
+<div class="container">
+    <div class="jumbotron">
+        <div class="container">
+            <h1><%= company.name %></h1>
+            <a class="btn btn-primary" href="/analytics/<%= company._id %>/posts/new">Add Your Interview Experience</a>
+        </div>    
+    </div>
 </div>
 
 <div class="container">
     <% company.posts.forEach(function(post){ %>
         <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
-                <div class="img-thumbnail">
+            <div class="col-md-12">
+                <div class="post_block">
+                    <h2><%= post.title %></h2>
+                    <br>
                     <h4><%= post.text %></h4>
+                    <br>
                     <p><strong><em>Contributed by <%= post.author.username %></em></strong></p>
 
                     <% if(currentUser && post.author.id.equals(currentUser._id)){ %>
@@ -27,7 +31,6 @@
                 <br>
                 
             </div>
-            <div class="col-md-2"></div>
         </div>
         
     <% }); %>

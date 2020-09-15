@@ -7,13 +7,15 @@
         </div>
     </div>
 
-<div class="row text-center" style="display:flex; flex-wrap:wrap;">
+<div class="row text-center">
     <% data.forEach(function(company){ %>
         <div class="col-md-3 col-sm-6" >
-            <div class="img-thumbnail">
+            <div class="cards">
+                <div class="img-thumbnail">
                 
                 <img src="<%= company.image %>">
                 <a class="btn btn-primary" href="/software/<%= company._id %>">Interview Experiences</a>
+            </div>
             </div>
         </div>
     <% }); %>
