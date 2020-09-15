@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "watch": "nodemon"
+    "start": "node app.js",
+    "watch": "nodemon app.js"
   },
   "author": "subhajyoti",
   "license": "ISC",
